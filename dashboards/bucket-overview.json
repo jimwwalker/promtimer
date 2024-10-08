@@ -177,14 +177,14 @@
         },
         {
           "datasource": "{data-source-name}",
-          "expr": "kv_ep_mem_high_wat{bucket=\"$bucket\"}",
+          "expr": "kv_ep_mem_high_wat_bytes{bucket=\"$bucket\"}",
           "interval": "",
           "legendFormat": "{data-source-name} high watermark",
           "_base": "target"
         },
         {
           "datasource": "{data-source-name}",
-          "expr": "kv_ep_mem_low_wat{bucket=\"$bucket\"}",
+          "expr": "kv_ep_mem_low_wat_bytes{bucket=\"$bucket\"}",
           "interval": "",
           "legendFormat": "{data-source-name} low watermark",
           "_base": "target"

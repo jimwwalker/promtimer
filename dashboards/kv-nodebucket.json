@@ -93,11 +93,11 @@
           "legendFormat": "Mutation threshold"
         },
         {
-          "expr": "kv_ep_mem_high_wat{bucket=\"$bucket\"}",
+          "expr": "kv_ep_mem_high_wat_bytes{bucket=\"$bucket\"}",
           "legendFormat": "HWM"
         },
         {
-          "expr": "kv_ep_mem_low_wat{bucket=\"$bucket\"}",
+          "expr": "kv_ep_mem_low_wat_bytes{bucket=\"$bucket\"}",
           "legendFormat": "LWM"
         },
         {
@@ -704,11 +704,11 @@
       },
       "targets": [
         {
-          "expr": "(kv_ep_mem_low_wat{bucket=\"$bucket\"} / on(bucket) kv_ep_vb_total{bucket=\"$bucket\"}) * on(bucket) (kv_num_vbuckets{state=\"active\",bucket=\"$bucket\"} + on(bucket) kv_num_vbuckets{state=\"pending\", bucket=\"$bucket\"})",
+          "expr": "(kv_ep_mem_low_wat_bytes{bucket=\"$bucket\"} / on(bucket) kv_ep_vb_total{bucket=\"$bucket\"}) * on(bucket) (kv_num_vbuckets{state=\"active\",bucket=\"$bucket\"} + on(bucket) kv_num_vbuckets{state=\"pending\", bucket=\"$bucket\"})",
           "legendFormat": "Pageable LWM"
         },
         {
-          "expr": "(kv_ep_mem_high_wat{bucket=\"$bucket\"} / on(bucket) kv_ep_vb_total{bucket=\"$bucket\"}) * on(bucket) (kv_num_vbuckets{state=\"active\",bucket=\"$bucket\"} + on(bucket) kv_num_vbuckets{state=\"pending\",bucket=\"$bucket\"})",
+          "expr": "(kv_ep_mem_high_wat_bytes{bucket=\"$bucket\"} / on(bucket) kv_ep_vb_total{bucket=\"$bucket\"}) * on(bucket) (kv_num_vbuckets{state=\"active\",bucket=\"$bucket\"} + on(bucket) kv_num_vbuckets{state=\"pending\",bucket=\"$bucket\"})",
           "legendFormat": "Pageable HWM"
         },
         {
